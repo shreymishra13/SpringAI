@@ -1,0 +1,2 @@
+The customer with the name as {customerName} has sent the following message: {customerMsg}.
+Understand the message and write a response to the mail. Ensure that the response is generous and should be ąssurring to the customer. Do not write the subject and signature. It should only contains the email body.
