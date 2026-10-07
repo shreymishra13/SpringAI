@@ -2,6 +2,7 @@ package com.springai.springai_proj_1.controller;
 
 
 import com.springai.springai_proj_1.dto.EmailRequestDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
+@Slf4j
 public class EmailWriterController {
 
     private ChatClient chatClient;
@@ -27,6 +29,7 @@ public class EmailWriterController {
     @PostMapping("/email")
     public ResponseEntity<?> emailWriter(@RequestBody EmailRequestDTO emailRequestDTO){
 
+        log.info("Email Request DTO received : "+ emailRequestDTO);
         String content = chatClient
                 .prompt()
                 .system("""
@@ -39,6 +42,8 @@ public class EmailWriterController {
                         )
                 .call()
                 .content();
+
+        log.info("Response received from LLM : "+ content);
 
         return ResponseEntity.ok().body(content);
 
