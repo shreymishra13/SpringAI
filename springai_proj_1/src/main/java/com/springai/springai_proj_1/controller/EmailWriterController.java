@@ -29,7 +29,7 @@ public class EmailWriterController {
     @PostMapping("/email")
     public ResponseEntity<?> emailWriter(@RequestBody EmailRequestDTO emailRequestDTO){
 
-        log.info("Email Request DTO received : "+ emailRequestDTO);
+        log.debug("Email Request DTO received : "+ emailRequestDTO);
         String content = chatClient
                 .prompt()
                 .system("""
@@ -43,7 +43,7 @@ public class EmailWriterController {
                 .call()
                 .content();
 
-        log.info("Response received from LLM : "+ content);
+        log.debug("Response received from LLM : "+ content);
 
         return ResponseEntity.ok().body(content);
 

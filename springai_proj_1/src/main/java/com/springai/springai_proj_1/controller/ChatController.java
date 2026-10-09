@@ -20,7 +20,7 @@ public class ChatController {
     
     @PostMapping("/chat")
     public ResponseEntity<?> chat(@RequestBody String question){
-        log.info("Question received : "+ question);
+        log.debug("Question received : "+ question);
         String content = null;
         if(question == null || question.isEmpty()){
             content = this.chatClient
@@ -43,7 +43,7 @@ public class ChatController {
                 .call().content();
 
 //        String content = this.chatClient.prompt(question).call().content();
-        log.info("Response received from the LLM : "+ content);
+        log.debug("Response received from the LLM : "+ content);
         return ResponseEntity.ok().body(
                 "Here is your answer provided by Ollama : \n"+ content
         );
