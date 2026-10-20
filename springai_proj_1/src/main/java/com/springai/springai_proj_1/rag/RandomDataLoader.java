@@ -1,0 +1,291 @@
+package com.springai.springai_proj_1.rag;
+
+
+import jakarta.annotation.PostConstruct;
+import org.springframework.ai.document.Document;
+import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+public class RandomDataLoader {
+
+    private final VectorStore vectorStore;
+
+    public RandomDataLoader(VectorStore vectorStore){
+        this.vectorStore = vectorStore;
+
+    }
+
+    @PostConstruct
+    public void randomDataLoader(){
+        List<String> sentences = List.of(
+                // Java and Programming
+                "Java is used for building scalable enterprise applications.",
+                "Python is commonly used for machine learning and automation tasks.",
+                "JavaScript is essential for creating interactive web pages.",
+                "Docker packages applications into lightweight containers.",
+                "Kubernetes automates container orchestration at scale.",
+                "Redis is an in-memory data store used for caching.",
+                "PostgreSQL supports complex queries and full ACID compliance.",
+                "Kafka is a distributed event streaming platform.",
+                "REST APIs allow stateless client-server communication.",
+                "GraphQL enables clients to fetch exactly the data they need.",
+                "Java supports object-oriented programming through classes and interfaces.",
+                "The Java Virtual Machine executes compiled Java bytecode.",
+                "Spring Boot simplifies the development of production-ready Java applications.",
+                "Multithreading allows multiple threads to execute concurrently.",
+                "Garbage collection automatically reclaims unused memory in Java.",
+                "Lambda expressions provide a concise way to represent anonymous functions.",
+                "Java streams simplify collection processing through functional operations.",
+                "Exception handling helps applications recover from unexpected runtime errors.",
+                "Dependency injection reduces coupling between software components.",
+                "Design patterns provide reusable solutions to common software engineering problems.",
+                "An algorithm defines a sequence of steps to solve a computational problem.",
+                "Binary search efficiently finds elements in sorted collections.",
+                "Hash maps provide efficient key-value lookups.",
+                "A linked list stores elements connected through references.",
+                "Recursion occurs when a function calls itself to solve a smaller problem.",
+                "Unit tests verify the behavior of individual software components.",
+                "Code reviews improve software quality and maintainability.",
+                "Version control systems track changes to source code.",
+                "Git branches allow developers to work on features independently.",
+                "Continuous integration automatically builds and tests code changes.",
+
+                // Backend and Web Development
+                "HTTP defines how clients and servers exchange information.",
+                "HTTPS encrypts communication between a browser and a web server.",
+                "RESTful services commonly use GET, POST, PUT, and DELETE methods.",
+                "JSON is a lightweight format for exchanging structured data.",
+                "OAuth enables applications to access resources through delegated authorization.",
+                "JWT tokens can carry claims used in authentication systems.",
+                "Load balancers distribute incoming requests across multiple servers.",
+                "Microservices divide applications into independently deployable services.",
+                "Caching reduces response times by storing frequently accessed data.",
+                "Rate limiting protects APIs from excessive requests.",
+                "WebSockets enable persistent, bidirectional communication between clients and servers.",
+                "An API gateway provides a central entry point for multiple backend services.",
+                "Session management maintains user state across HTTP requests.",
+                "Asynchronous programming allows applications to perform work without blocking execution.",
+                "Event-driven architectures react to events rather than relying only on direct requests.",
+                "A reverse proxy forwards client requests to backend servers.",
+                "Server-side rendering generates HTML before sending pages to the browser.",
+                "Content delivery networks distribute cached content closer to users.",
+                "Database connection pools reuse connections to reduce overhead.",
+                "Observability combines logs, metrics, and traces to understand system behavior.",
+
+                // Databases and Data Engineering
+                "A relational database organizes information into tables with defined relationships.",
+                "SQL is used to query and manipulate relational database records.",
+                "Database indexes can accelerate queries involving frequently searched columns.",
+                "Normalization reduces redundant data and improves relational database consistency.",
+                "Transactions group database operations into a single logical unit.",
+                "A primary key uniquely identifies each record in a table.",
+                "Foreign keys enforce relationships between records in different tables.",
+                "MongoDB stores documents in flexible, JSON-like structures.",
+                "Elasticsearch supports full-text search across large document collections.",
+                "Redis can store frequently accessed results to reduce database load.",
+                "Database replication maintains copies of data across multiple database servers.",
+                "Sharding distributes database records across multiple partitions.",
+                "A data warehouse stores integrated information for analytical workloads.",
+                "Extract, transform, and load pipelines prepare data for analysis.",
+                "Apache Spark processes large datasets across distributed computing clusters.",
+                "Data validation helps identify incomplete or inconsistent records.",
+                "Columnar storage can improve analytical query performance.",
+                "Event sourcing records changes as a sequence of domain events.",
+                "Change data capture tracks database modifications for downstream systems.",
+                "A materialized view stores the result of a query for faster retrieval.",
+
+                // Cloud and Distributed Systems
+                "Cloud computing provides computing resources through internet-based services.",
+                "Amazon Web Services offers infrastructure, storage, and managed application services.",
+                "Microsoft Azure supports enterprise applications and cloud infrastructure.",
+                "Google Cloud provides managed services for data analytics and machine learning.",
+                "Virtual machines run isolated operating systems on shared physical hardware.",
+                "Serverless computing allows developers to run code without managing servers directly.",
+                "Object storage is suitable for backups, images, videos, and large files.",
+                "Auto-scaling adjusts computing capacity according to application demand.",
+                "Infrastructure as code manages cloud resources through version-controlled configuration files.",
+                "A virtual private cloud provides logically isolated networking resources.",
+                "Distributed systems coordinate work across multiple independent computers.",
+                "Consensus algorithms help distributed nodes agree on shared state.",
+                "Fault tolerance allows a system to continue operating when components fail.",
+                "High availability minimizes service interruptions through redundancy and recovery mechanisms.",
+                "Eventual consistency means replicas may temporarily disagree before converging.",
+                "A message queue decouples producers from consumers in asynchronous systems.",
+                "Circuit breakers prevent repeated calls to services that are failing.",
+                "Service discovery helps applications locate available network services.",
+                "Horizontal scaling increases capacity by adding more machines or instances.",
+                "Disaster recovery plans describe how systems and data can be restored after major failures.",
+
+                // Cybersecurity
+                "Encryption protects sensitive information by transforming it into unreadable ciphertext.",
+                "Multi-factor authentication requires users to verify their identity through multiple methods.",
+                "A firewall filters network traffic according to predefined security rules.",
+                "Phishing attacks attempt to steal credentials through deceptive messages.",
+                "Hash functions produce fixed-length digests from input data.",
+                "Salted password hashes make precomputed password attacks more difficult.",
+                "The principle of least privilege limits access to necessary resources.",
+                "Security patches address known software vulnerabilities.",
+                "A zero-day vulnerability is a flaw that is exploited before an effective patch is available.",
+                "Regular backups help organizations recover from ransomware and accidental data loss.",
+
+                // Finance and Economics
+                "Credit scores influence the interest rates on loans.",
+                "Mutual funds pool money from investors to buy securities.",
+                "Bitcoin operates on a decentralized peer-to-peer network.",
+                "Ethereum supports smart contract deployment.",
+                "The stock market opens at 9:30 a.m. EST on weekdays.",
+                "Compound interest increases investment returns over time.",
+                "Diversifying investments reduces overall risk.",
+                "A blockchain is a distributed, immutable ledger of transactions.",
+                "Inflation reduces the purchasing power of money over time.",
+                "Central banks use monetary policy to influence economic activity.",
+                "Government bonds allow investors to lend money to public institutions.",
+                "An emergency fund helps cover unexpected expenses.",
+                "A company's profit is the amount remaining after expenses are deducted from revenue.",
+                "Exchange rates determine how much one currency is worth in another currency.",
+                "Index funds aim to track the performance of a particular market index.",
+                "Liquidity describes how easily an asset can be converted into cash.",
+                "A balance sheet summarizes assets, liabilities, and shareholders' equity.",
+                "Supply and demand influence the prices of goods and services.",
+                "Net present value compares the present value of expected cash flows with an investment's cost.",
+                "Risk-adjusted returns measure investment performance relative to the risk taken.",
+
+                // Science and Technology
+                "Photosynthesis is how plants convert sunlight into energy.",
+                "The water cycle involves evaporation, condensation, and precipitation.",
+                "The ozone layer protects Earth from harmful ultraviolet rays.",
+                "Earth revolves around the Sun in an elliptical orbit.",
+                "Lightning is a discharge of electricity caused by charged clouds.",
+                "DNA is the molecule that carries genetic instructions in living organisms.",
+                "Volcanoes form when magma rises through Earth's crust.",
+                "Earthquakes are caused by sudden tectonic shifts.",
+                "Gravity attracts objects with mass toward one another.",
+                "Sound travels through a medium as a mechanical wave.",
+                "Light travels faster in a vacuum than in any other known medium.",
+                "The periodic table organizes chemical elements according to their atomic properties.",
+                "Electrons carry a negative electric charge.",
+                "The human heart pumps blood throughout the circulatory system.",
+                "Bacteria are single-celled organisms found in many environments.",
+                "Antibiotics treat certain bacterial infections but do not directly treat viral infections.",
+                "Vaccines train the immune system to recognize specific pathogens.",
+                "Machine learning models identify patterns in data to make predictions.",
+                "Neural networks are computational models inspired by interconnected biological neurons.",
+                "Quantum computing uses quantum states to perform certain computational tasks.",
+
+                // Geography and History
+                "The Sahara is the largest hot desert in the world.",
+                "Mount Kilimanjaro is the tallest mountain in Africa.",
+                "Japan is known for its cherry blossoms and advanced technology.",
+                "The Great Wall of China is over 13,000 miles long.",
+                "Niagara Falls is located between Canada and the United States.",
+                "The Amazon River is one of the longest rivers in the world.",
+                "The Pacific Ocean is the largest and deepest ocean on Earth.",
+                "The Himalayas contain many of the world's highest mountain peaks.",
+                "Antarctica is the coldest continent on Earth.",
+                "The Nile River flows northward through northeastern Africa.",
+                "The French Revolution began in 1789.",
+                "The Industrial Revolution transformed manufacturing and transportation.",
+                "The Roman Empire influenced law, architecture, and political institutions.",
+                "The printing press helped accelerate the spread of written information in Europe.",
+                "The United Nations was established in 1945 after World War II.",
+                "The Renaissance encouraged advances in art, science, and literature.",
+                "The Silk Road connected trading networks across Asia and Europe.",
+                "The first human landed on the Moon in 1969.",
+                "Ancient Egyptian civilization developed along the Nile River.",
+                "The Berlin Wall fell in November 1989.",
+
+                // Health and Nutrition
+                "Oats are high in fiber and help reduce cholesterol.",
+                "Drinking water supports normal digestion and temperature regulation.",
+                "A balanced diet includes proteins, carbohydrates, fats, vitamins, and minerals.",
+                "Broccoli is rich in vitamins C and K.",
+                "Green tea contains antioxidants that have been studied for potential health benefits.",
+                "Too much added sugar can increase the risk of several health problems.",
+                "Walking regularly can improve cardiovascular fitness.",
+                "Meditation can reduce stress and improve focus for some people.",
+                "Gratitude journaling is associated with greater reported well-being in some studies.",
+                "Deep breathing exercises can help regulate the body's stress response.",
+                "Adequate sleep supports memory, concentration, and emotional regulation.",
+                "Dietary fiber supports bowel regularity and digestive health.",
+                "Regular exercise helps maintain muscle strength and bone health.",
+                "Calcium is important for strong bones and teeth.",
+                "Vitamin D helps the body absorb calcium.",
+                "Handwashing reduces the spread of many infectious diseases.",
+                "Protecting skin from excessive ultraviolet exposure reduces the risk of skin damage.",
+                "A consistent sleep schedule can help regulate the body's internal clock.",
+                "Rest days allow the body to recover between demanding workouts.",
+                "Routine medical checkups can help identify certain health problems early.",
+
+                // Education and Learning
+                "Reading daily improves vocabulary and cognitive function.",
+                "Setting daily goals can improve productivity.",
+                "STEM stands for Science, Technology, Engineering, and Mathematics.",
+                "Bloom's taxonomy categorizes educational goals.",
+                "Project-based learning encourages students to apply knowledge to practical problems.",
+                "Online courses offer flexibility for remote learners.",
+                "Flashcards are useful for practicing factual recall.",
+                "Spaced repetition schedules reviews to improve long-term retention.",
+                "Active recall requires learners to retrieve information from memory.",
+                "Group discussions expose students to different perspectives.",
+                "Feedback helps learners identify mistakes and improve their performance.",
+                "Breaking complex subjects into smaller topics can make learning more manageable.",
+                "Practice exams help students become familiar with question formats and time limits.",
+                "Concept maps illustrate relationships between ideas.",
+                "Teaching a concept to someone else can reveal gaps in understanding.",
+
+                // Business and Management
+                "Agile methodology promotes iterative software development.",
+                "OKRs help align team goals with business strategy.",
+                "Remote work offers flexibility but requires clear communication.",
+                "CRM systems manage customer relationships and sales pipelines.",
+                "SWOT analysis identifies strengths, weaknesses, opportunities, and threats.",
+                "Market research helps businesses understand customer needs and preferences.",
+                "A value proposition explains why customers should choose a particular product.",
+                "Customer retention measures how effectively a company keeps existing customers.",
+                "A minimum viable product tests core assumptions with limited initial functionality.",
+                "Product managers coordinate customer needs, business goals, and technical execution.",
+                "Key performance indicators measure progress toward defined objectives.",
+                "A project roadmap communicates planned milestones and priorities.",
+                "Effective delegation distributes responsibility while maintaining accountability.",
+                "Cash flow tracks money entering and leaving a business.",
+                "Customer segmentation groups buyers according to shared characteristics.",
+                "A competitive analysis compares a business with its market rivals.",
+                "Supply chain management coordinates the movement of goods from suppliers to customers.",
+                "Brand positioning defines how a product should be perceived in its target market.",
+                "Operational efficiency measures how effectively resources are converted into useful output.",
+                "Strategic planning connects long-term objectives with actionable business priorities.",
+
+                // Everyday Knowledge and General Concepts
+                "The Earth rotates on its axis approximately once every twenty-four hours.",
+                "A leap year usually contains 366 days instead of 365.",
+                "The metric system uses powers of ten to define units of measurement.",
+                "Renewable energy comes from sources that naturally replenish over time.",
+                "Solar panels convert sunlight into electrical energy.",
+                "Wind turbines generate electricity from moving air.",
+                "Recycling helps reduce the demand for some new raw materials.",
+                "Electric vehicles use electric motors to propel their wheels.",
+                "Public transportation can reduce the number of private vehicles on roads.",
+                "Urban green spaces provide recreational areas and habitats for wildlife.",
+                "Weather forecasts use observations and models to estimate future atmospheric conditions.",
+                "A compass uses Earth's magnetic field to indicate direction.",
+                "Photography records images using light-sensitive sensors or materials.",
+                "Music theory describes relationships between rhythm, melody, harmony, and structure.",
+                "A library provides access to books, information, and learning resources.",
+                "Time management involves planning activities to use available time effectively.",
+                "Critical thinking involves evaluating evidence before reaching a conclusion.",
+                "Clear communication reduces misunderstandings between individuals and teams.",
+                "Small, consistent improvements can produce significant results over time.",
+                "Good documentation helps people understand and maintain complex systems."
+        );
+
+        List<Document> list = sentences.stream().map(Document::new)
+                .toList();
+
+        vectorStore.add(list);
+
+    }
+}
