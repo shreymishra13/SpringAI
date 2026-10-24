@@ -1,0 +1,232 @@
+2026-10-24T17:38:16.683+05:30  INFO 24518 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : Starting McpClientApplication using Java 25.0.1 with PID 24518 (/Users/shreymishra/Desktop/SpringAI /springai_proj_2/target/classes started by shreymishra in /Users/shreymishra/Desktop/SpringAI /springai_proj_2)
+2026-10-24T17:38:16.684+05:30  INFO 24518 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-10-24T17:38:16.702+05:30  INFO 24518 --- [mcpClient] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-24T17:38:16.702+05:30  INFO 24518 --- [mcpClient] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-24T17:38:17.097+05:30  INFO 24518 --- [mcpClient] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-24T17:38:17.102+05:30  INFO 24518 --- [mcpClient] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-24T17:38:17.102+05:30  INFO 24518 --- [mcpClient] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-10-24T17:38:17.114+05:30  INFO 24518 --- [mcpClient] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 412 ms
+2026-10-24T17:38:17.350+05:30  WARN 24518 --- [mcpClient] [restartedMain] o.s.a.m.a.p.s.SyncMcpSamplingProvider    : No sampling methods found
+2026-10-24T17:38:17.351+05:30  WARN 24518 --- [mcpClient] [restartedMain] o.s.a.m.a.p.e.SyncMcpElicitationProvider : No elicitation methods found
+2026-10-24T17:38:17.358+05:30  INFO 24518 --- [mcpClient] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-24T17:38:17.361+05:30  INFO 24518 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : Started McpClientApplication in 0.822 seconds (process running for 0.985)
+2026-10-24T17:38:17.362+05:30  WARN 24518 --- [mcpClient] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-24T17:38:17.362+05:30  WARN 24518 --- [mcpClient] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-24T17:38:42.563+05:30  INFO 24518 --- [mcpClient] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-24T17:38:42.563+05:30  INFO 24518 --- [mcpClient] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-24T17:38:42.565+05:30  INFO 24518 --- [mcpClient] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-10-24T17:38:42.762+05:30  INFO 24518 --- [mcpClient] [http-nio-8080-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 67 ms
+2026-10-24T17:38:57.073+05:30 DEBUG 24518 --- [mcpClient] [http-nio-8080-exec-5] o.s.a.c.c.advisor.SimpleLoggerAdvisor    : request: ChatClientRequest[prompt=Prompt{messages=[UserMessage{content='who are you?', metadata={messageType=USER}, messageType=USER}], modelOptions=org.springframework.ai.ollama.api.OllamaChatOptions@4ad20307}, context={}]
+2026-10-24T17:38:57.131+05:30 ERROR 24518 --- [mcpClient] [http-nio-8080-exec-5] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2026-10-24T17:39:04.101+05:30 DEBUG 24518 --- [mcpClient] [http-nio-8080-exec-5] o.s.a.c.c.advisor.SimpleLoggerAdvisor    : response: {
+  "metadata" : {
+    "empty" : false,
+    "id" : "",
+    "model" : "codellama",
+    "promptMetadata" : [ ],
+    "rateLimit" : {
+      "requestsLimit" : 0,
+      "requestsRemaining" : 0,
+      "requestsReset" : "PT0S",
+      "tokensLimit" : 0,
+      "tokensRemaining" : 0,
+      "tokensReset" : "PT0S"
+    },
+    "usage" : {
+      "promptTokens" : 24,
+      "completionTokens" : 83,
+      "totalTokens" : 107
+    }
+  },
+  "result" : {
+    "metadata" : {
+      "contentFilters" : [ ],
+      "empty" : true,
+      "finishReason" : "stop"
+    },
+    "output" : {
+      "media" : [ ],
+      "messageType" : "ASSISTANT",
+      "metadata" : {
+        "messageType" : "ASSISTANT"
+      },
+      "text" : "\nI am LLaMA, an AI assistant developed by Meta AI that can understand and respond to human input in a conversational manner. I am trained on a massive dataset of text from the internet and can answer questions and provide information on a wide range of topics. I can be used to create chatbots, virtual assistants, and other applications that require natural language understanding and generation capabilities.",
+      "toolCalls" : [ ]
+    }
+  },
+  "results" : [ {
+    "metadata" : {
+      "contentFilters" : [ ],
+      "empty" : true,
+      "finishReason" : "stop"
+    },
+    "output" : {
+      "media" : [ ],
+      "messageType" : "ASSISTANT",
+      "metadata" : {
+        "messageType" : "ASSISTANT"
+      },
+      "text" : "\nI am LLaMA, an AI assistant developed by Meta AI that can understand and respond to human input in a conversational manner. I am trained on a massive dataset of text from the internet and can answer questions and provide information on a wide range of topics. I can be used to create chatbots, virtual assistants, and other applications that require natural language understanding and generation capabilities.",
+      "toolCalls" : [ ]
+    }
+  } ]
+}
+2026-10-24T17:40:27.160+05:30  INFO 24518 --- [mcpClient] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-24T17:40:27.163+05:30  INFO 24518 --- [mcpClient] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-24T17:40:28.727+05:30  INFO 24564 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : Starting McpClientApplication using Java 25.0.1 with PID 24564 (/Users/shreymishra/Desktop/SpringAI /springai_proj_2/target/classes started by shreymishra in /Users/shreymishra/Desktop/SpringAI /springai_proj_2)
+2026-10-24T17:40:28.728+05:30  INFO 24564 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-10-24T17:40:28.750+05:30  INFO 24564 --- [mcpClient] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-24T17:40:28.751+05:30  INFO 24564 --- [mcpClient] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-24T17:40:29.211+05:30  INFO 24564 --- [mcpClient] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-24T17:40:29.217+05:30  INFO 24564 --- [mcpClient] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-24T17:40:29.217+05:30  INFO 24564 --- [mcpClient] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-10-24T17:40:29.231+05:30  INFO 24564 --- [mcpClient] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 480 ms
+2026-10-24T17:40:29.567+05:30  WARN 24564 --- [mcpClient] [restartedMain] o.s.a.m.a.p.s.SyncMcpSamplingProvider    : No sampling methods found
+2026-10-24T17:40:29.568+05:30  WARN 24564 --- [mcpClient] [restartedMain] o.s.a.m.a.p.e.SyncMcpElicitationProvider : No elicitation methods found
+2026-10-24T17:40:29.575+05:30  INFO 24564 --- [mcpClient] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-24T17:40:29.578+05:30  INFO 24564 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : Started McpClientApplication in 1.034 seconds (process running for 1.217)
+2026-10-24T17:40:29.579+05:30  WARN 24564 --- [mcpClient] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-24T17:40:29.579+05:30  WARN 24564 --- [mcpClient] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-24T17:40:35.753+05:30  INFO 24564 --- [mcpClient] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-24T17:40:35.753+05:30  INFO 24564 --- [mcpClient] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-24T17:40:35.754+05:30  INFO 24564 --- [mcpClient] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-10-24T17:40:35.775+05:30 DEBUG 24564 --- [mcpClient] [http-nio-8080-exec-1] o.s.a.c.c.advisor.SimpleLoggerAdvisor    : request: ChatClientRequest[prompt=Prompt{messages=[UserMessage{content='who are you?', metadata={messageType=USER}, messageType=USER}], modelOptions=org.springframework.ai.ollama.api.OllamaChatOptions@4ad20307}, context={}]
+2026-10-24T17:40:35.828+05:30 ERROR 24564 --- [mcpClient] [http-nio-8080-exec-1] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2026-10-24T17:40:39.411+05:30 DEBUG 24564 --- [mcpClient] [http-nio-8080-exec-1] o.s.a.c.c.advisor.SimpleLoggerAdvisor    : response: {
+  "metadata" : {
+    "empty" : false,
+    "id" : "",
+    "model" : "codellama",
+    "promptMetadata" : [ ],
+    "rateLimit" : {
+      "requestsLimit" : 0,
+      "requestsRemaining" : 0,
+      "requestsReset" : "PT0S",
+      "tokensLimit" : 0,
+      "tokensRemaining" : 0,
+      "tokensReset" : "PT0S"
+    },
+    "usage" : {
+      "promptTokens" : 24,
+      "completionTokens" : 83,
+      "totalTokens" : 107
+    }
+  },
+  "result" : {
+    "metadata" : {
+      "contentFilters" : [ ],
+      "empty" : true,
+      "finishReason" : "stop"
+    },
+    "output" : {
+      "media" : [ ],
+      "messageType" : "ASSISTANT",
+      "metadata" : {
+        "messageType" : "ASSISTANT"
+      },
+      "text" : "\nI am LLaMA, an AI assistant developed by Meta AI that can understand and respond to human input in a conversational manner. I am trained on a massive dataset of text from the internet and can answer questions or provide information on a wide range of topics. I can be used to create chatbots, virtual assistants, and other applications that require natural language understanding and generation capabilities.",
+      "toolCalls" : [ ]
+    }
+  },
+  "results" : [ {
+    "metadata" : {
+      "contentFilters" : [ ],
+      "empty" : true,
+      "finishReason" : "stop"
+    },
+    "output" : {
+      "media" : [ ],
+      "messageType" : "ASSISTANT",
+      "metadata" : {
+        "messageType" : "ASSISTANT"
+      },
+      "text" : "\nI am LLaMA, an AI assistant developed by Meta AI that can understand and respond to human input in a conversational manner. I am trained on a massive dataset of text from the internet and can answer questions or provide information on a wide range of topics. I can be used to create chatbots, virtual assistants, and other applications that require natural language understanding and generation capabilities.",
+      "toolCalls" : [ ]
+    }
+  } ]
+}
+2026-10-24T17:40:45.982+05:30 ERROR 24564 --- [mcpClient] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException] with root cause
+
+java.lang.RuntimeException
+	at com.springai.springai_proj_2.service.ChatService.getResponse(ChatService.java:22) ~[classes/:na]
+	at com.springai.springai_proj_2.controller.ChatController.getResponse(ChatController.java:28) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-11.0.27.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.10.jar:7.0.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.27.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59) ~[tomcat-embed-websocket-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.10.jar:7.0.10]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:164) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:411) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1308) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2202) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:947) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:481) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74) ~[tomcat-embed-core-11.0.27.jar:11.0.27]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-10-24T17:41:19.468+05:30  INFO 24564 --- [mcpClient] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-24T17:41:19.471+05:30  INFO 24564 --- [mcpClient] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-24T17:41:20.785+05:30  INFO 24580 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : Starting McpClientApplication using Java 25.0.1 with PID 24580 (/Users/shreymishra/Desktop/SpringAI /springai_proj_2/target/classes started by shreymishra in /Users/shreymishra/Desktop/SpringAI /springai_proj_2)
+2026-10-24T17:41:20.786+05:30  INFO 24580 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-10-24T17:41:20.804+05:30  INFO 24580 --- [mcpClient] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-24T17:41:20.804+05:30  INFO 24580 --- [mcpClient] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-24T17:41:21.213+05:30  INFO 24580 --- [mcpClient] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-24T17:41:21.218+05:30  INFO 24580 --- [mcpClient] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-24T17:41:21.218+05:30  INFO 24580 --- [mcpClient] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-10-24T17:41:21.229+05:30  INFO 24580 --- [mcpClient] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 425 ms
+2026-10-24T17:41:21.475+05:30  WARN 24580 --- [mcpClient] [restartedMain] o.s.a.m.a.p.s.SyncMcpSamplingProvider    : No sampling methods found
+2026-10-24T17:41:21.476+05:30  WARN 24580 --- [mcpClient] [restartedMain] o.s.a.m.a.p.e.SyncMcpElicitationProvider : No elicitation methods found
+2026-10-24T17:41:21.481+05:30  INFO 24580 --- [mcpClient] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-24T17:41:21.484+05:30  INFO 24580 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : Started McpClientApplication in 0.837 seconds (process running for 0.995)
+2026-10-24T17:41:21.485+05:30  WARN 24580 --- [mcpClient] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-24T17:41:21.485+05:30  WARN 24580 --- [mcpClient] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-24T17:41:30.540+05:30  INFO 24580 --- [mcpClient] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-24T17:41:30.540+05:30  INFO 24580 --- [mcpClient] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-24T17:41:30.541+05:30  INFO 24580 --- [mcpClient] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-24T17:41:30.560+05:30  WARN 24580 --- [mcpClient] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.springai.springai_proj_2.exception.ChatResponseException: Exception occurred while get response from LLM]
+2026-10-24T17:42:03.950+05:30  INFO 24580 --- [mcpClient] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-24T17:42:03.955+05:30  INFO 24580 --- [mcpClient] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-24T17:42:05.241+05:30  INFO 24594 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : Starting McpClientApplication using Java 25.0.1 with PID 24594 (/Users/shreymishra/Desktop/SpringAI /springai_proj_2/target/classes started by shreymishra in /Users/shreymishra/Desktop/SpringAI /springai_proj_2)
+2026-10-24T17:42:05.242+05:30  INFO 24594 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : No active profile set, falling back to 1 default profile: "default"
+2026-10-24T17:42:05.262+05:30  INFO 24594 --- [mcpClient] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-24T17:42:05.262+05:30  INFO 24594 --- [mcpClient] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-24T17:42:05.667+05:30  INFO 24594 --- [mcpClient] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-10-24T17:42:05.672+05:30  INFO 24594 --- [mcpClient] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-24T17:42:05.673+05:30  INFO 24594 --- [mcpClient] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-10-24T17:42:05.684+05:30  INFO 24594 --- [mcpClient] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 421 ms
+2026-10-24T17:42:05.926+05:30  WARN 24594 --- [mcpClient] [restartedMain] o.s.a.m.a.p.s.SyncMcpSamplingProvider    : No sampling methods found
+2026-10-24T17:42:05.927+05:30  WARN 24594 --- [mcpClient] [restartedMain] o.s.a.m.a.p.e.SyncMcpElicitationProvider : No elicitation methods found
+2026-10-24T17:42:05.932+05:30  INFO 24594 --- [mcpClient] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-10-24T17:42:05.935+05:30  INFO 24594 --- [mcpClient] [restartedMain] c.s.s.McpClientApplication               : Started McpClientApplication in 0.84 seconds (process running for 0.989)
+2026-10-24T17:42:05.936+05:30  WARN 24594 --- [mcpClient] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-24T17:42:05.936+05:30  WARN 24594 --- [mcpClient] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
