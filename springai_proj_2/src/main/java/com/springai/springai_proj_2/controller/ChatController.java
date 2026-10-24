@@ -27,4 +27,10 @@ public class ChatController {
 
         return ResponseEntity.ok(chatService.getResponse(query));
     }
+
+    @GetMapping("/mcp")
+    public ResponseEntity<?> performAction(@RequestParam("query") String query){
+
+        return ResponseEntity.ok(chatService.performAction(query));
+    }
 }
